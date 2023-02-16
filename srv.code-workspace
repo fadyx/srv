@@ -1,0 +1,234 @@
+/*
+	Apps' prefix:
+		[🧩]
+	Packages' prefix:
+		[📦]
+	Configs' prefix:
+		[⚙️]
+*/
+
+{
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"type": "node",
+				"request": "attach",
+				"name": "Docker: Attach to Node",
+				"remoteRoot": "/app",
+				"localRoot": "${workspaceFolder}/api",
+				"port": 9229,
+				"address": "localhost",
+				"restart": true,
+				"sourceMaps": true
+			}
+		],
+		"compounds": []
+	},
+	"extensions": {
+		"recommendations": [
+			"aaron-bond.better-comments",
+			"adpyke.vscode-sql-formatter",
+			"alefragnani.bookmarks",
+			"alefragnani.project-manager",
+			"christian-kohler.npm-intellisense",
+			"christian-kohler.path-intellisense",
+			"codezombiech.gitignore",
+			"davidanson.vscode-markdownlint",
+			"dbaeumer.vscode-eslint",
+			"donjayamanne.githistory",
+			"eamodio.gitlens",
+			"ecmel.vscode-html-css",
+			"editorconfig.editorconfig",
+			"eg2.vscode-npm-script",
+			"esbenp.prettier-vscode",
+			"fabiospampinato.vscode-diff",
+			"formulahendry.code-runner",
+			"github.github-vscode-theme",
+			"github.vscode-pull-request-github",
+			"hediet.vscode-drawio",
+			"humao.rest-client",
+			"mhutchie.git-graph",
+			"mikestead.dotenv",
+			"ms-azuretools.vscode-docker",
+			"ms-ossdata.vscode-postgresql",
+			"ms-vscode-remote.remote-ssh-edit",
+			"ms-vscode-remote.remote-ssh",
+			"ms-vscode.makefile-tools",
+			"ms-vscode.remote-explorer",
+			"orta.vscode-jest",
+			"pkief.material-icon-theme",
+			"redhat.vscode-yaml",
+			"shd101wyy.markdown-preview-enhanced",
+			"streetsidesoftware.code-spell-checker",
+			"usernamehw.errorlens",
+			"visualstudioexptteam.intellicode-api-usage-examples",
+			"visualstudioexptteam.vscodeintellicode",
+			"wayou.vscode-todo-highlight",
+			"windmilleng.vscode-go-autotest",
+			"wix.vscode-import-cost",
+			"wmaurer.change-case",
+			"wmaurer.vscode-jumpy",
+			"yzhang.markdown-all-in-one"
+		]
+	},
+	"folders": [
+		{
+			"name": "[🪵]monorepo",
+			"path": "."
+		},
+		{
+			"name": "[🧩]api",
+			"path": "./apps/api"
+		},
+		{
+			"name": "[☁️]infra",
+			"path": "./apps/infra"
+		},
+		{
+			"name": "[📦]logger",
+			"path": "./packages/logger"
+		},
+		{
+			"name": "[⚙️]jestconfig",
+			"path": "./packages/jestconfig"
+		},
+		{
+			"name": "[⚙️]tsconfig",
+			"path": "./packages/tsconfig"
+		},
+		{
+			"name": "[⚙️]eslint-config-node",
+			"path": "./packages/eslint-config-node"
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"packages/": false,
+			"**/node_modules/**": false,
+			"**/.git": false
+		},
+		"files.watcherExclude": {
+			"**/.git/objects/**": true,
+			"**/.git/subtree-cache/**": true,
+			"**/node_modules/*/**": true,
+			"**/.hg/store/**": true
+		},
+		"jest.rootPath": ".",
+		"jest.jestCommandLine": "yarn test",
+		"jest.autoRun": "off",
+		"jest.disabledWorkspaceFolders": [
+			"[🪵]monorepo",
+			"[⚙️]tsconfig",
+			"[⚙️]jestconfig",
+			"[⚙️]eslint-config-node"
+		],
+		"editor.acceptSuggestionOnEnter": "smart",
+		"editor.autoIndent": "full",
+		"editor.bracketPairColorization.enabled": true,
+		"editor.cursorBlinking": "phase",
+		"editor.cursorSmoothCaretAnimation": "on",
+		"editor.cursorStyle": "line",
+		"editor.cursorWidth": 5,
+		"editor.formatOnSave": true,
+		"editor.formatOnSaveMode": "file",
+		"editor.hover.delay": 500,
+		"editor.hover.sticky": true,
+		"editor.matchBrackets": "always",
+		"editor.padding.top": 20,
+		"editor.renderLineHighlight": "all",
+		"editor.roundedSelection": true,
+		"editor.rulers": [80, 120],
+		"editor.selectionHighlight": true,
+		"editor.smoothScrolling": true,
+		"editor.suggest.showColors": true,
+		"editor.suggest.showIcons": true,
+		"editor.suggestSelection": "first",
+		"explorer.autoReveal": "focusNoScroll",
+		"explorer.compactFolders": false,
+		"explorer.confirmDelete": true,
+		"explorer.confirmDragAndDrop": true,
+		"explorer.decorations.badges": true,
+		"explorer.decorations.colors": true,
+		"explorer.incrementalNaming": "simple",
+		"explorer.openEditors.visible": 9,
+		"files.enableTrash": true,
+		"files.restoreUndoStack": true,
+		"git.autofetch": true,
+		"git.confirmSync": false,
+		"javascript.updateImportsOnFileMove.enabled": "never",
+		"terminal.integrated.altClickMovesCursor": true,
+		"terminal.integrated.cursorBlinking": true,
+		"terminal.integrated.enableBell": true,
+		"terminal.integrated.fontFamily": "monospace, PowerlineSymbols",
+		"terminal.integrated.scrollback": 100000,
+		"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+		"window.title": "${dirty}${activeEditorShort}${separator}${rootName}",
+		"window.titleSeparator": " - ",
+		"window.zoomLevel": 0,
+		"workbench.colorTheme": "GitHub Dark",
+		"workbench.editor.highlightModifiedTabs": true,
+		"workbench.editor.wrapTabs": false,
+		"workbench.sideBar.location": "left",
+		"terminal.integrated.profiles.linux": {
+			"bash": {
+				"path": "bash",
+				"icon": "terminal-bash"
+			},
+			"zsh": {
+				"path": "zsh"
+			},
+			"fish": {
+				"path": "fish"
+			},
+			"tmux": {
+				"path": "tmux",
+				"icon": "terminal-tmux"
+			},
+			"pwsh": {
+				"path": "pwsh",
+				"icon": "terminal-powershell"
+			}
+		},
+		"workbench.colorCustomizations": {
+			"activityBar.background": "#003153",
+			"titleBar.activeBackground": "#003153",
+			"titleBar.activeForeground": "#ffffff",
+			"statusBar.background": "#590869",
+			"statusBar.foreground": "#ffffff",
+			"editorCursor.foreground": "#fff000"
+		},
+		"editor.quickSuggestions": {
+			"other": true,
+			"comments": true,
+			"strings": true
+		},
+		"diffEditor.renderSideBySide": false,
+		"material-icon-theme.folders.color": "#42a5f5",
+		"material-icon-theme.folders.theme": "specific",
+		"material-icon-theme.hidesExplorerArrows": false,
+		"material-icon-theme.saturation": 0.8,
+		"redhat.telemetry.enabled": false,
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true
+		},
+		"cSpell.words": [
+			"colours",
+			"commitlint",
+			"Dockerfiles",
+			"esbuild",
+			"eslintconfig",
+			"fady",
+			"healthz",
+			"jestconfig",
+			"ncurc",
+			"outdir",
+			"Parens"
+		],
+		"eslint.alwaysShowStatus": true,
+		"eslint.enable": true,
+		"eslint.debug": true,
+		"eslint.packageManager": "yarn",
+		"eslint.run": "onSave"
+	}
+}

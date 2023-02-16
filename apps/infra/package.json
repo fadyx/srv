@@ -1,0 +1,38 @@
+{
+	"name": "infra",
+	"license": "UNLICENSED",
+	"version": "0.0.0",
+	"bin": {
+		"infra": "src/bin/index.js"
+	},
+	"scripts": {
+		"bootstrap": "dotenv -e ../../.env -- cdk bootstrap",
+		"cdk": "dotenv -e ../../.env -- cdk",
+		"build": "dotenv -e ../../.env -- cdk synth",
+		"watch": "tsc -w",
+		"test": "jest --detectOpenHandles",
+		"lint": "tsc --noEmit && TIMING=1 eslint \"src/**/*.ts*\"",
+		"cdk:deploy:stacks:all": "cdk deploy --all --require-approval=never",
+		"aws:configure": "dotenv -e ../../.env -- aws configure --profile %AWS_CLI_PROFILE%"
+	},
+	"devDependencies": {
+		"@jest/globals": "^29.4.2",
+		"@types/jest": "^29.2.4",
+		"@types/node": "18.11.15",
+		"aws-cdk": "2.59.0",
+		"eslint": "^8.33.0",
+		"eslint-config-node": "*",
+		"jest": "^29.3.1",
+		"jestconfig": "*",
+		"ts-jest": "^29.0.3",
+		"ts-node": "^10.9.1",
+		"tsconfig": "*",
+		"typescript": "~4.9.4"
+	},
+	"dependencies": {
+		"aws-cdk-lib": "2.59.0",
+		"constructs": "^10.0.0",
+		"dotenv": "^16.0.3",
+		"source-map-support": "^0.5.21"
+	}
+}

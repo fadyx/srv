@@ -1,0 +1,18 @@
+===============================================================================
+
+This Makefile is meant to help abstracting away dealing with the multiple
+Dockerfiles that are going to be included for the whole monorepo packages.
+
+Following is the list of targets:
+
+help                    Shows this list for help.
+                        The default target when no target is specified.
+
+compose_up_api          Start the API up along with its dependencies in
+                        development mode.
+
+compose_down_api        Tear down the API containers.
+
+build_image_api			Build a production container image for API.
+
+===============================================================================

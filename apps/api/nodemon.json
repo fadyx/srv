@@ -1,0 +1,21 @@
+{
+	"watch": ["src"],
+	"ext": "js,ts,json",
+	"delay": 0,
+	"verbose": true,
+	"colours": true,
+	"restartable": "rs",
+	"ignore": [
+		".git/",
+		"certificates/",
+		"coverage/",
+		"logs/",
+		"node_modules/",
+		"tests/",
+		"src/logs/*",
+		"src/**/*.{spec,test}.ts"
+	],
+	"execMap": {
+		"ts": "node -r ts-node/register --inspect -r tsconfig-paths/register"
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"name": "logger",
+	"version": "0.0.0",
+	"private": true,
+	"main": "./dist/index.js",
+	"source": "./src/index.ts",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist/**"
+	],
+	"scripts": {
+		"build": "tsc",
+		"clean": "rm -rf dist",
+		"dev": "tsc -w",
+		"lint": "tsc --noEmit && TIMING=1 eslint \"src/**/*.ts*\"",
+		"test": "jest --detectOpenHandles"
+	},
+	"devDependencies": {
+		"@jest/globals": "^29.4.1",
+		"@types/jest": "^29.4.0",
+		"@types/node": "^18.11.18",
+		"eslint": "^8.33.0",
+		"eslint-config-node": "*",
+		"jest": "^29.4.1",
+		"jestconfig": "*",
+		"tsconfig": "*",
+		"typescript": "^4.9.5"
+	}
+}

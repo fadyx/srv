@@ -1,0 +1,13 @@
+*.d.ts
+*.js
+/__tests__/**
+/build/**
+/coverage/**
+/dist/
+/node_modules/
+/out/
+/templates/**
+/tmp/
+commitlint.config.ts
+**/!esbuild.js
+__temp

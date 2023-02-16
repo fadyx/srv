@@ -1,0 +1,56 @@
+# ports syntax: HOST:CONTAINER
+version: "3.9"
+
+volumes:
+   postgresqldb_data:
+      driver: local
+
+networks:
+   app_network:
+
+services:
+   postgresqldb:
+      image: "postgres:13.9-alpine"
+      container_name: "${APP_ID}-postgresqldb"
+      restart: always
+      healthcheck:
+         test: ["CMD", "pg_isready", "-q", "-d", "postgres", "-U", "root"]
+         timeout: 45s
+         interval: 10s
+         retries: 10
+      volumes:
+         - postgresqldb_data:/var/lib/postgresql/data
+      ports:
+         - "${POSTGRES_PORT}:5432"
+      environment:
+         - POSTGRES_USER=${POSTGRES_USER}
+         - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+         - POSTGRES_DB=${POSTGRES_DB}
+      networks:
+         - app_network
+
+   api:
+      container_name: "${APP_ID}-api"
+      working_dir: /usr/srv/apps/api
+      restart: unless-stopped
+      depends_on:
+         - postgresqldb
+      external_links:
+         - postgresqldb
+      env_file:
+         - .env
+      build:
+         context: .
+         dockerfile: ./apps.api.dev.dockerfile
+      volumes:
+         - ./apps/api:/usr/srv/apps/api
+         - type: bind
+           source: ./apps/api/node_modules
+           target: /usr/srv/apps/api/node_modules
+      ports:
+         - "${APP_PORT}:${APP_PORT}"
+         - "9229:9229"
+      links:
+         - "postgresqldb:pgdb"
+      networks:
+         - app_network
