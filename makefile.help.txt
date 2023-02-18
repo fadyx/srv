@@ -5,14 +5,30 @@ Dockerfiles that are going to be included for the whole monorepo packages.
 
 Following is the list of targets:
 
-help                    Shows this list for help.
-                        The default target when no target is specified.
+help                    		Shows this list for help.
+                        		The default target when no target is specified.
 
-compose_up_api          Start the API up along with its dependencies in
-                        development mode.
+compose_up_api_dev      		Start the API up along with its dependencies in
+                        		development mode.
 
-compose_down_api        Tear down the API containers.
+compose_down_api_dev    		Tear down the API containers.
 
-build_image_api			Build a production container image for API.
+rebuild_api_dev_image			Rebuilding the API image only inside the docker
+										compose file used for development.
+
+bash_api_dev						Running a bash session inside the API container.
+
+build_image_api_prod				Build a production container image for the API.
+
+docker_stats						Display Docker statistics.
+
+commit								Make a new git commit.
+
+purge_dry							Purging node_modules in dry mode.
+
+purge_execute						Purging node_modules in execution mode.
+
+update_dependencies_dry			Update npm dependencies in dry mode
+update_dependencies_execution	Update npm dependencies in execution mode
 
 ===============================================================================

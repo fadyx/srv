@@ -48,8 +48,8 @@ services:
            source: ./apps/api/node_modules
            target: /usr/srv/apps/api/node_modules
       ports:
-         - "${APP_PORT}:${APP_PORT}"
-         - "9229:9229"
+         - "${API_PORT}:${API_PORT}"
+         - "${API_PORT_INSPECT}:9229"
       links:
          - "postgresqldb:pgdb"
       networks:

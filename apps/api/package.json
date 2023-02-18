@@ -4,15 +4,15 @@
 	"private": true,
 	"scripts": {
 		"build": "yarn tsc  && yarn tsc-alias",
-		"bundle": "node build.js",
-		"start": "node src/index.js",
-		"clean": "rm -rf dist",
-		"check:types": "yarn tsc --noEmit",
-		"dev:watch": "dotenv -e ../.env -- nodemon",
-		"start:dev": "node dist/index.js",
-		"dev": "yarn nodemon --inspect -r tsconfig-paths/register src/index.ts",
-		"lint": "tsc --noEmit && TIMING=1 eslint \"src/**/*.ts*\"",
-		"test": "jest --detectOpenHandles"
+		"bundle": "rm -fr dist && node build.js",
+		"run:prod": "node dist/src/index.js",
+		"run:dev": "node -r ts-node/register --inspect=0.0.0.0:9229 -r tsconfig-paths/register -r source-map-support/register src/index.ts",
+		"prod": "yarn run:prod",
+		"dev": "yarn nodemon",
+		"test": "jest --detectOpenHandles",
+		"lint:check": "yarn tsc --noEmit && TIMING=1 yarn eslint .",
+		"lint:fix": "yarn lint:check --fix",
+		"clean": "rm -rf dist"
 	},
 	"dependencies": {
 		"express": "^4.18.2",
@@ -24,6 +24,7 @@
 		"@types/morgan": "^1.9.4",
 		"@types/node": "^18.11.18",
 		"@types/supertest": "^2.0.12",
+		"dotenv-cli": "^7.0.0",
 		"esbuild": "^0.17.8",
 		"eslint": "^8.33.0",
 		"eslint-config-node": "*",

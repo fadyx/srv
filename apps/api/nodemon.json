@@ -1,5 +1,6 @@
 {
-	"watch": ["src"],
+	"exec": "yarn run:dev",
+	"watch": ["src", "../../.env"],
 	"ext": "js,ts,json",
 	"delay": 0,
 	"verbose": true,
@@ -14,8 +15,5 @@
 		"tests/",
 		"src/logs/*",
 		"src/**/*.{spec,test}.ts"
-	],
-	"execMap": {
-		"ts": "node -r ts-node/register --inspect -r tsconfig-paths/register"
-	}
+	]
 }

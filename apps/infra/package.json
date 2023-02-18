@@ -2,18 +2,17 @@
 	"name": "infra",
 	"license": "UNLICENSED",
 	"version": "0.0.0",
-	"bin": {
-		"infra": "src/bin/index.js"
-	},
 	"scripts": {
-		"bootstrap": "dotenv -e ../../.env -- cdk bootstrap",
-		"cdk": "dotenv -e ../../.env -- cdk",
-		"build": "dotenv -e ../../.env -- cdk synth",
+		"bootstrap": "dotenv -e ./../../.env cdk bootstrap",
+		"cdk": "dotenv -e ./../../.env cdk",
+		"build": "dotenv -e ./../../.env cdk synth",
 		"watch": "tsc -w",
+		"clean": "rm -fr cdk.out",
 		"test": "jest --detectOpenHandles",
-		"lint": "tsc --noEmit && TIMING=1 eslint \"src/**/*.ts*\"",
+		"lint:check": "yarn tsc --noEmit && TIMING=1 yarn eslint .",
+		"lint:fix": "yarn lint:check --fix",
 		"cdk:deploy:stacks:all": "cdk deploy --all --require-approval=never",
-		"aws:configure": "dotenv -e ../../.env -- aws configure --profile %AWS_CLI_PROFILE%"
+		"aws:configure": "dotenv -e ./../../.env aws configure --profile %AWS_CLI_PROFILE%"
 	},
 	"devDependencies": {
 		"@jest/globals": "^29.4.2",

@@ -1,10 +1,12 @@
+#! /usr/bin node
+
 const esbuild = require("esbuild");
 
 const build = async () => {
 	await esbuild.build({
 		entryPoints: ["./src/index.ts"],
 		bundle: true,
-		outdir: "./dist",
+		outdir: "./dist/src",
 		tsconfig: "./tsconfig.json",
 		minify: true,
 		write: true,

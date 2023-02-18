@@ -1,18 +1,22 @@
 {
 	"$schema": "https://turbo.build/schema.json",
-	"globalDependencies": ["**/.env.local"],
+	"globalDependencies": ["**/.env"],
 	"globalEnv": [],
 	"pipeline": {
 		"build": {
 			"dependsOn": ["^build"],
-			"outputs": ["dist/**"],
+			"outputs": ["dist/**", "cdk.out/**"],
 			"env": []
 		},
 		"test": {
 			"outputs": ["coverage/**"],
 			"dependsOn": []
 		},
-		"lint": {
+		"lint:check": {
+			"outputs": [],
+			"dependsOn": ["^build"]
+		},
+		"lint:fix": {
 			"outputs": [],
 			"dependsOn": ["^build"]
 		},
@@ -22,10 +26,6 @@
 		},
 		"clean": {
 			"cache": false
-		},
-		"lint:staged": {
-			"cache": false,
-			"dependsOn": ["^build"]
 		}
 	}
 }

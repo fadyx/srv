@@ -1,6 +1,6 @@
 {
 	"$schema": "https://json.schemastore.org/tsconfig",
-	"extends": "tsconfig/api.tsconfig.json",
+	"extends": "tsconfig/node.tsconfig.json",
 	"include": ["src", "**/*.ts", "**/*.json"],
 	"exclude": ["node_modules", "./dist"],
 	"compilerOptions": {

@@ -92,7 +92,6 @@
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": true
 	},
-	// "eslint.workingDirectories": ["./src"],
 	"cSpell.words": [
 		"colours",
 		"commitlint",

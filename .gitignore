@@ -8,10 +8,6 @@ _.seed
 .DS_Store
 .dynamodb/
 .env
-.env.development.local
-.env.local
-.env.production.local
-.env.test.local
 .env*
 .eslintcache
 .fusebox/

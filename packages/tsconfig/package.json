@@ -5,6 +5,6 @@
 	"license": "UNLICENSED",
 	"files": [
 		"base.tsconfig.json",
-		"api.tsconfig.json"
+		"node.tsconfig.json"
 	]
 }

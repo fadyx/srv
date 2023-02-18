@@ -18,36 +18,24 @@
 	"config": {},
 	"scripts": {
 		"build": "turbo run build",
+		"lint:check": "turbo run lint:check --bail",
+		"lint:fix": "turbo run lint:fix",
 		"dev": "turbo run dev",
 		"test": "turbo run test",
-		"lint": "turbo run lint",
-		"format": "prettier --write \"**/*.{ts,tsx,md}\"",
-		"commit:cz": "yarn cz",
-		"release": "turbo run build --filter=docs^... && changeset publish",
-		"changeset": "changeset",
-		"version-packages": "changeset version",
 		"clean": "turbo run clean && rm -rf node_modules",
+		"release": "turbo run build --filter=docs^... && changeset publish",
+		"version-packages": "changeset version",
+		"changeset": "changeset",
 		"root:lint:staged": "yarn lint-staged --allow-empty --concurrent false",
-		"prepare": "yarn prepare:husky && yarn prepare:changeset",
-		"prepare:husky": "husky install",
-		"prepare:changeset": "yarn tsc .changeset/*.ts",
-		"root:deps:check": "yarn npm-check-updates --configFileName ncurc.json --deep",
-		"root:deps:update": "yarn npm-check-updates --configFileName ncurc.json  --deep -u -i",
-		"root:test:all": "turbo run test",
 		"root:changeset:add": "yarn changeset add",
 		"root:changeset:empty": "yarn changeset add --empty",
 		"root:changeset:release": "yarn changeset version",
 		"root:changeset:check": "yarn changeset status",
 		"root:changeset:tag": "yarn changeset tag",
 		"root:changeset:check:main": "yarn changeset status --since-master",
-		"root:upgrade": "yarn upgrade",
-		"root:lint:check": "yarn eslint . --quiet",
-		"root:lint:write": "yarn eslint . --fix",
-		"root:prettier:check": "yarn prettier . --check",
-		"root:prettier:write": "yarn prettier . --write",
-		"root:purge:dry": "find . -name 'node_modules' -type d -prune",
-		"root:purge:execute": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
-		"root:infra:bootstrap": "yarn workspace infra bootstrap"
+		"prepare": "yarn prepare:husky && yarn prepare:changeset",
+		"prepare:husky": "husky install",
+		"prepare:changeset": "yarn tsc .changeset/*.ts"
 	},
 	"dependencies": {},
 	"devDependencies": {
@@ -63,15 +51,13 @@
 		"dotenv-cli": "^7.0.0",
 		"eslint": "^8.33.0",
 		"husky": "^8.0.3",
+		"inquirer": "^8.0.0",
 		"lint-staged": "^13.1.0",
 		"npm-check-updates": "^16.6.3",
 		"prettier": "^2.8.3",
-		"ts-node": "^10.9.1",
 		"tsconfig-paths": "^4.1.2",
 		"turbo": "^1.7.3",
 		"typescript": "^4.9.5"
 	},
-	"peerDependencies": {
-		"inquirer": "^8.0.0"
-	}
+	"peerDependencies": {}
 }

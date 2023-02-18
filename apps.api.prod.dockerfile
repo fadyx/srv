@@ -52,4 +52,4 @@ USER api
 COPY --from=builder /usr/srv/apps/api/dist /usr/srv/apps/api
 COPY --from=production /usr/srv/node_modules /usr/srv/node_modules
 
-CMD ["yarn", "start"]
+CMD ["yarn", "prod"]
