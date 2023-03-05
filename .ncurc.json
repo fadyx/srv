@@ -5,7 +5,6 @@
 	"deprecated": true,
 	"doctorTest": "yarn root:test:all",
 	"enginesNode": true,
-	"format": "group",
 	"peer": true,
 	"root": true,
 	"workspaces": true

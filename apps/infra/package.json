@@ -2,36 +2,43 @@
 	"name": "infra",
 	"license": "UNLICENSED",
 	"version": "0.0.0",
+	"engines": {
+		"node": "^v18.13.x",
+		"yarn": ">=1.22.0",
+		"npm": "please-use-yarn"
+	},
 	"scripts": {
-		"bootstrap": "dotenv -e ./../../.env cdk bootstrap",
-		"cdk": "dotenv -e ./../../.env cdk",
-		"build": "dotenv -e ./../../.env cdk synth",
-		"watch": "tsc -w",
+		"bootstrap": "npx dotenv -e ./../../.env cdk bootstrap",
+		"cdk": "npx dotenv -e ./../../.env -- npx cdk",
+		"build": "npx dotenv -e ./../../.env cdk synth",
+		"watch": "npx tsc -w",
 		"clean": "rm -fr cdk.out",
-		"test": "jest --detectOpenHandles",
-		"lint:check": "yarn tsc --noEmit && TIMING=1 yarn eslint .",
+		"test": "npx jest --detectOpenHandles",
+		"lint:check": "npx tsc --noEmit && TIMING=1 yarn eslint .",
 		"lint:fix": "yarn lint:check --fix",
-		"cdk:deploy:stacks:all": "cdk deploy --all --require-approval=never",
-		"aws:configure": "dotenv -e ./../../.env aws configure --profile %AWS_CLI_PROFILE%"
+		"deploy": "yarn cdk deploy --json --verbose --debug --ci --concurrency=999 --all=true --require-approval=never",
+		"aws:configure": "npx dotenv -e ./../../.env -- aws configure --profile %AWS_CLI_PROFILE%"
 	},
 	"devDependencies": {
-		"@jest/globals": "^29.4.2",
+		"@jest/globals": "^29.4.3",
 		"@types/jest": "^29.2.4",
 		"@types/node": "18.11.15",
-		"aws-cdk": "2.59.0",
-		"eslint": "^8.33.0",
+		"aws-cdk": "2.66.1",
+		"eslint": "^8.34.0",
 		"eslint-config-node": "*",
-		"jest": "^29.3.1",
+		"jest": "^29.4.3",
 		"jestconfig": "*",
-		"ts-jest": "^29.0.3",
+		"ts-jest": "^29.0.5",
 		"ts-node": "^10.9.1",
 		"tsconfig": "*",
-		"typescript": "~4.9.4"
+		"tsutils": "*",
+		"typescript": "~4.9.5"
 	},
 	"dependencies": {
-		"aws-cdk-lib": "2.59.0",
-		"constructs": "^10.0.0",
+		"aws-cdk-lib": "2.66.1",
+		"constructs": "^10.1.260",
 		"dotenv": "^16.0.3",
-		"source-map-support": "^0.5.21"
+		"source-map-support": "^0.5.21",
+		"zod": "^3.20.6"
 	}
 }

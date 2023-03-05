@@ -15,6 +15,7 @@ const configurations: UserConfig = {
 				"[🪵]monorepo",
 				"[🧩]api",
 				"[☁️]infra",
+				"[🚧]pipes",
 				"[📦]logger",
 				"[⚙️]jestconfig",
 				"[⚙️]tsconfig",

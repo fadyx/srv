@@ -8,6 +8,7 @@ module.exports = {
 	rules: {
 		"turbo/no-undeclared-env-vars": "warn",
 		"class-methods-use-this": "off",
+		"@typescript-eslint/consistent-type-definitions": "off",
 	},
 	settings: {
 		"import/resolver": {

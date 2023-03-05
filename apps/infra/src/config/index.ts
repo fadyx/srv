@@ -1,3 +1,2 @@
-import env from "./env";
-
-export default { env };
+export * from "./env";
+export * from "./settings";

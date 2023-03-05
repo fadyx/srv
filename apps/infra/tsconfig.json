@@ -19,12 +19,14 @@
 		"inlineSources": true,
 		"experimentalDecorators": true,
 		"strictPropertyInitialization": false,
-		"typeRoots": ["./node_modules/@types"],
+		"typeRoots": ["./node_modules/@types", "./src/**/*.d.ts"],
 		"baseUrl": "./src",
 		"paths": {
+			"*": ["node_modules/*", "src/*"],
 			"@/*": ["./*"]
 		}
 	},
 	"include": ["src"],
-	"exclude": ["node_modules", "cdk.out"]
+	"exclude": ["node_modules", "cdk.out"],
+	"ts-node": { "typeCheck": true, "files": true }
 }

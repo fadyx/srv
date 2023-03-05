@@ -97,12 +97,13 @@
 		"commitlint",
 		"Dockerfiles",
 		"esbuild",
+		"eslintconfig",
 		"fady",
 		"healthz",
 		"jestconfig",
 		"ncurc",
 		"outdir",
 		"Parens",
-		"eslintconfig"
+		"tsutils"
 	]
 }

@@ -1,0 +1,34 @@
+{
+	"name": "tsutils",
+	"version": "0.0.0",
+	"private": true,
+	"main": "./dist/index.d.js",
+	"source": "./src/index.ts",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"src/**"
+	],
+	"engines": {
+		"node": "^v18.13.x",
+		"yarn": ">=1.22.0",
+		"npm": "please-use-yarn"
+	},
+	"scripts": {
+		"build": "tsc",
+		"clean": "rm -rf dist",
+		"dev": "tsc -w",
+		"lint": "tsc --noEmit && TIMING=1 eslint \"src/**/*.ts*\"",
+		"test": "jest --detectOpenHandles"
+	},
+	"devDependencies": {
+		"@jest/globals": "^29.4.3",
+		"@types/jest": "^29.4.0",
+		"@types/node": "^18.11.18",
+		"eslint": "^8.34.0",
+		"eslint-config-node": "*",
+		"jest": "^29.4.3",
+		"jestconfig": "*",
+		"tsconfig": "*",
+		"typescript": "^4.9.5"
+	}
+}

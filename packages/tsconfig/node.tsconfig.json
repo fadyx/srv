@@ -3,9 +3,9 @@
 	"extends": "./base.tsconfig.json",
 	"display": "node",
 	"compilerOptions": {
-		"lib": ["ES2021"],
+		"lib": ["ESNext"],
 		"module": "CommonJS",
-		"target": "ES2021",
+		"target": "ESNext",
 		"moduleResolution": "node",
 		"resolveJsonModule": true,
 		"strict": true,

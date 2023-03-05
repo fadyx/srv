@@ -13,6 +13,10 @@
 			"path": "./apps/infra"
 		},
 		{
+			"name": "[🚧]pipes",
+			"path": "./apps/pipes"
+		},
+		{
 			"name": "[📦]logger",
 			"path": "./packages/logger"
 		},
@@ -23,6 +27,10 @@
 		{
 			"name": "[⚙️]tsconfig",
 			"path": "./packages/tsconfig"
+		},
+		{
+			"name": "[⚙️]tsutils",
+			"path": "./packages/tsutils"
 		},
 		{
 			"name": "[⚙️]eslint-config-node",
@@ -150,7 +158,8 @@
 			"jestconfig",
 			"ncurc",
 			"outdir",
-			"Parens"
+			"Parens",
+			"tsutils"
 		],
 		"eslint.alwaysShowStatus": true,
 		"eslint.enable": true,

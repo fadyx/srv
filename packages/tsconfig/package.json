@@ -3,6 +3,11 @@
 	"version": "0.0.0",
 	"private": true,
 	"license": "UNLICENSED",
+	"engines": {
+		"node": "^v18.13.x",
+		"yarn": ">=1.22.0",
+		"npm": "please-use-yarn"
+	},
 	"files": [
 		"base.tsconfig.json",
 		"node.tsconfig.json"

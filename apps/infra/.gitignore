@@ -6,3 +6,4 @@ node_modules
 cdk.out
 !.eslintrc.js
 !src/**/d.ts/*
+cdk.context.json
